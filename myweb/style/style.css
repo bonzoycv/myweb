@@ -1,0 +1,115 @@
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c7c7c7;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+
+        header, footer {
+            background-color: #808080;
+            color: rgb(85, 85, 85);
+            padding: 1em;
+            height: 45px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #c7c7c7;
+        }
+
+        .logo a {
+            color: #c7c7c7;
+            text-decoration: none;  /* Elimina el subrayado */
+
+        }
+
+        .logo a:hover{
+            color: #FFD700;  /* Cambia a dorado al pasar el ratón */
+            text-decoration: none;  /* Elimina el subrayado */
+            transition: color 0.3s;  /* Suaviza la transición del color */
+        }
+
+        .logo a:visited {
+            color: #E0E0E0;  /* Cambia a un gris más claro después de visitar */
+
+        }
+
+        .menu {
+            display: flex;
+            
+        }
+        .menu > li {
+            list-style: none;
+            margin-left: 1em;
+            position: relative;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #808080;
+            padding: 0.5em;
+            list-style: none;  /* Elimina los puntos */
+            padding-left: 0;   /* Elimina el padding izquierdo por defecto */
+            
+        }
+        .menu > li:hover .submenu {
+            display: block;
+          
+        }
+
+        .menu a, .submenu a {
+            color: white;  /* Color por defecto */
+            text-decoration: none;  /* Elimina el subrayado */
+            transition: color 0.3s;  /* Suaviza la transición del color */
+        }
+        
+        .menu a:hover, .submenu a:hover {
+            color: #FFD700;  /* Cambia a dorado al pasar el ratón */
+        }
+        
+        .menu a:visited, .submenu a:visited {
+            color: #E0E0E0;  /* Cambia a un gris más claro después de visitar */
+        }
+        
+        .menu a:active, .submenu a:active {
+            color: #FF4500;  /* Cambia a naranja rojizo al hacer clic */
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        p{
+
+        }
+
+
+        footer {
+            flex-shrink: 0;
+            background-color: #808080;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
