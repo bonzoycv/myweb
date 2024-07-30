@@ -10,8 +10,21 @@
             background-color: #c7c7c7;
             display: flex;
             flex-direction: column;
+            font-size: 16px; /* Tamaño de fuente base */
         }
 
+        main {
+            max-width: 800px;
+            width: 90%; /* Ajusta el ancho al 90% del contenedor */
+            margin: 0 auto;
+            padding: 1em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
         .content-wrapper {
             flex: 1 0 auto;
         }
@@ -129,19 +142,6 @@
             color: #f07b50; /* Naranja al hacer clic */
         }
 
-        /* code {
-            background-color: #e0e0e0;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 2px 5px;
-            font-family: monospace;
-        } */
-
-        p{
-
-        }
-
-
         footer {
             flex-shrink: 0;
             background-color: #808080;
@@ -149,3 +149,54 @@
             padding: 1em;
             text-align: center;
         }
+
+
+
+/* Media queries para responsividad */
+
+@media screen and (max-width: 768px) {
+
+    /* Estilos para tablets y móviles */
+    body {
+        font-size: 14px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu > li {
+        margin: 0.5em 0;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+    }
+
+    .menu > li:hover .submenu {
+        display: block;
+    }
+
+    main {
+        padding: 1em 0.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Estilos específicos para móviles */
+    body {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+}
