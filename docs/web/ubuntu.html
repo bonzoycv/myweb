@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Linux - YCV</title>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="../index.html">YCV</a></div>
+      <ul class="menu">
+        <li><a href="./about.html">Acerca de mi</a></li>
+        <li>
+          <a href="#learning">Mi aprendizaje</a>
+          <ul class="submenu">
+            <li><a href="./guides.html">Guías</a></li>
+            <li><a href="#codes">Códigos</a></li>
+            <li><a href="./distros.html">Distribuciones</a></li>
+          </ul>
+        </li>
+        <li><a href="#links">Enlaces</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="content-wrapper">
+    <main>
+      <!-- Aquí irá el contenido principal -->
+      <h1>Guía de Configuración Inicial para Ubuntu 24.04</h1>
+
+      <h3>Despues de instalar Ubuntu estos son los primeros pasos que sigo para poner a punto mi sistema.</h3>
+
+      <h2>1. Actualización del Sistema</h2>
+      <p>Primero, actualizamos la lista de paquetes y el sistema:</p>
+      <p><code>sudo apt update -y</code></p>
+      <p><code>sudo apt upgrade -y</code></p>
+      <p><code>sudo apt update -y</code></p>
+
+      <p>Estos comandos actualizan la lista de paquetes disponibles y luego actualizan todos los paquetes instalados a
+        sus últimas versiones.</p>
+
+      <h2>2. Instalación de Paquetes Esenciales</h2>
+      <p><code>sudo apt install build-essential checkinstall</code></p>
+      <p><code>sudo apt install ubuntu-restricted-extras</code></p>
+      <p><code>sudo apt install software-properties-common</code></p>
+      <p><code>sudo apt install apt-show-versions</code></p>
+      <p>Estos comandos instalan herramientas de compilación, codecs multimedia, software para gestionar repositorios y
+        una herramienta para mostrar versiones de paquetes.</p>
+
+      <h2>3. Verificación de Actualizaciones</h2>
+      <p><code>sudo apt upgrade -o APT::Get::Show-Upgraded=true</code></p>
+      <p><code>sudo apt-show-versions | grep upgradeable</code></p>
+      <p>Estos comandos muestran qué paquetes se actualizarán y cuáles tienen actualizaciones disponibles.</p>
+
+
+      <h2>4. Configuración de SSH</h2>
+      <p><code>sudo apt-get install openssh-server </code></p>
+      <p><code>sed -i 's/^PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config </code></p>
+      <p><code>sed -i 's/^PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config </code></p>
+      <p><code>sed -i 's/^PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config </code></p>
+      <p><code>service ssh restart</code></p>
+      <p>Estos comandos instalan y configuran el servidor SSH, permitiendo el acceso remoto al sistema.</p>
+
+      <h2>5. Limpieza Final del Sistema</h2>
+      <p><code>sudo apt update -y</code></p>
+      <p><code> apt upgrade -y</code></p>
+      <p><code>sudo apt -f install</code></p>
+      <p><code>sudo apt autoremove</code></p>
+      <p><code>sudo apt -y autoclean</code></p>
+      <p><code>sudo apt -y clean</code></p>
+      <p><code>reboot</code></p>
+      <p>Estos comandos realizan una limpieza final del sistema, removiendo paquetes innecesarios y reiniciando el
+        sistema.</p>
+
+      <h2>6. Optimización de Energía (para laptops)</h2>
+      <p><code>sudo apt install tlp tlp-rdw </code></p>
+      <p><code>sudo tlp start</code></p>
+      <p>Estos comandos instalan y activan TLP, una herramienta para optimizar la duración de la batería en laptops.</p>
+
+      <p><strong>Nota:</strong> Algunos de estos comandos, especialmente los relacionados con la configuración de SSH,
+        pueden tener implicaciones de seguridad. Asegúrate de entender completamente sus efectos antes de ejecutarlos en
+        un sistema en producción.</p>
+</body>
+
+</html>
+</main>
+</div>
+<footer>
+  <p>© 2024 YCV. Contenido bajo licencia Creative Commons.</p>
+</footer>
+</body>
+
+</html>

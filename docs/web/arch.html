@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Linux - YCV</title>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="../index.html">YCV</a></div>
+      <ul class="menu">
+        <li><a href="./about.html">Acerca de mi</a></li>
+        <li>
+          <a href="#learning">Mi aprendizaje</a>
+          <ul class="submenu">
+            <li><a href="./guides.html">Guías</a></li>
+            <li><a href="#codes">Códigos</a></li>
+            <li><a href="./distros.html">Distribuciones</a></li>
+          </ul>
+        </li>
+        <li><a href="#links">Enlaces</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="content-wrapper">
+    <main>
+      <!-- Aquí irá el contenido principal -->
+      <h1>Guía de Pacman y Yay en Arch Linux</h1>
+
+      <h2>Pequeña guía para recordar los comandos que más utilizo en Arch. </h2>
+
+      <h3>Gestión de Paquetes con Pacman</h3>
+
+      <div class="command-explanation">
+        <h3>Instalar Paquetes</h3>
+        <pre><code>pacman -S package_name1 package_name2 ...</code></pre>
+        <p>Este comando instala uno o más paquetes. Puedes listar múltiples paquetes separados por espacios.</p>
+      </div>
+
+      <div class="command-explanation">
+        <h3>Eliminar Paquetes</h3>
+        <pre><code>pacman -R package_name</code></pre>
+        <p>Elimina un paquete instalado.</p>
+        <pre><code>pacman -Rn package_name</code></pre>
+        <p>Elimina un paquete y sus archivos de configuración.</p>
+        <pre><code>pacman -Rs package_name</code></pre>
+        <p>Elimina un paquete y sus dependencias que no son requeridas por otros paquetes.</p>
+        <pre><code>pacman -Rns package_name</code></pre>
+        <p>Combinación para eliminar completamente un paquete, sus configuraciones y dependencias no necesarias.</p>
+      </div>
+
+      <div class="command-explanation">
+        <h3>Limpiar Dependencias no Utilizadas</h3>
+        <pre><code>pacman -Qdtq | pacman -Rs -</code></pre>
+        <p>Este comando elimina las dependencias que ya no son requeridas por ningún paquete instalado (equivalente a
+          'autoremove' en Ubuntu).</p>
+      </div>
+
+      <div class="command-explanation">
+        <h3>Actualizar Paquetes</h3>
+        <pre><code>pacman -Syu</code></pre>
+        <p>Actualiza todos los paquetes instalados. Aquí, 'S' significa sincronizar, 'y' refresca la caché local, y
+          'u' actualiza el sistema.</p>
+      </div>
+
+      <div class="command-explanation">
+        <h3>Buscar Paquetes</h3>
+        <pre><code>pacman -Ss string1 string2 ...</code></pre>
+        <p>Busca paquetes en la base de datos de Pacman.</p>
+        <pre><code>pacman -Qs string1 string2 ...</code></pre>
+        <p>Busca entre los paquetes ya instalados.</p>
+      </div>
+
+      <div class="command-explanation">
+        <h3>Limpiar Caché de Paquetes</h3>
+        <pre><code>paccache -r</code></pre>
+        <p>Limpia la caché de paquetes, manteniendo las 3 versiones más recientes.</p>
+        <pre><code>pacman -Sc</code></pre>
+        <p>Elimina toda la caché de paquetes que ya no están instalados.</p>
+      </div>
+
+      <h2>Notas Adicionales</h2>
+      <p>Recuerda que para usar Pacman necesitas permisos de superusuario. Puedes preceder los comandos con 'sudo' o
+        cambiar al usuario root.</p>
+      <p>Yay es un wrapper de Pacman que también maneja paquetes del AUR (Arch User Repository). La mayoría de los
+        comandos de Pacman funcionan de manera similar en Yay.</p>
+
+
+    </main>
+  </div>
+  <footer>
+    <p>© 2024 YCV. Contenido bajo licencia Creative Commons.</p>
+  </footer>
+</body>
+
+</html>
